@@ -14,6 +14,7 @@ export class LoginService {
       "password":password
     }
     return this.http.post('http://localhost:3000/api/login', datos)
+    
   } 
 
   registro(user:string, email:string, dni:string, password:string){
