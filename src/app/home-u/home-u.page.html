@@ -17,7 +17,7 @@
         Home
       </ion-tab-button>
       
-      <ion-tab-button id="open-modal" expand="block" tab="Perfil">
+      <ion-tab-button (click)="setOpen(true)" expand="block" tab="Perfil">
         <ion-icon name="person-Outline"></ion-icon>
         Perfil
       </ion-tab-button>
@@ -47,7 +47,46 @@
     </ion-card-content>
   </ion-card>
 
-
+  <ion-modal  [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-title >Informacion Personal </ion-title>
+          <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="background-image"></div>
+        <ion-card class="cardProfile">
+          <ion-card-content>
+            <ion-label class="lc" position="stacked">Nombre de Usuario</ion-label>
+            <ion-input [disabled]="editDatos" value="{{profilee.user?.user}}"></ion-input>
+        
+            <ion-label class="lc" position="stacked">Email</ion-label>
+            <ion-input  [disabled]="editDatos" value="{{profilee.user?.email}}"></ion-input>
+        
+            <ion-label class="lc" position="stacked">Dirección</ion-label>
+            <ion-input [(ngModel)]="profilee.user.person.direccion" placeholder="Dirección"></ion-input>
+        
+            <ion-label class="lc" position="stacked">Teléfono</ion-label>
+            <ion-input [(ngModel)]="profilee.user.person.tlf" placeholder="Número Telefónico"></ion-input>
+        
+            <ion-label class="lc" position="stacked">Sexo</ion-label>
+            <ion-input [(ngModel)]="profilee.user.person.sexo" placeholder="Masculino o Femenino"></ion-input>
+        
+            <ion-label class="lc" position="stacked">Edad</ion-label>
+            <ion-input [(ngModel)]="profilee.user.person.edad" placeholder="18? maybe"></ion-input>
+          </ion-card-content>
+        
+          <ion-button class="ion-buttonc" (click)="updatePerson()">Actualizar</ion-button>
+        </ion-card>
+        
+        
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
   
 </ion-content>

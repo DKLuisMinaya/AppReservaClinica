@@ -29,5 +29,9 @@ export const routes: Routes = [
   {
     path: 'agenda',
     loadComponent: () => import('./agenda/agenda.page').then( m => m.AgendaPage)
+  },  {
+    path: 'perfil',
+    loadComponent: () => import('./perfil/perfil.page').then( m => m.PerfilPage)
   },
+
 ];

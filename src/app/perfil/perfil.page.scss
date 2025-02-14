@@ -1,0 +1,30 @@
+.cardProfile {
+    position: relative;
+    top: -20px; /* Ajusta según sea necesario */
+    margin-top: 70px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+  }
+  
+  ion-input {
+    --background: #f9f9f9;
+    --border-radius: 8px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --color: #333;
+    margin-bottom: 10px;
+  }
+  
+  ion-label {
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+  
+  ion-button {
+    margin-top: 15px;
+    width: 100%;
+    --border-radius: 8px;
+  }
+  
