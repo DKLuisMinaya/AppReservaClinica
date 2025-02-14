@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Princeton-Plainsboro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="background-image"></div>
+  <div>
+    <ion-tabs>
+      <ion-tab-bar  slot="bottom">
+        <ion-tab-button  routerLink="/agenda" tab="Agenda">
+          <ion-icon name="folder-open-outline"></ion-icon>
+          Agenda
+        </ion-tab-button>
+  
+        <ion-tab-button routerLink="/home-u" tab="Home">
+          <ion-icon name="home-Outline"></ion-icon>
+          Home
+        </ion-tab-button>
+        
+        <ion-tab-button id="open-modal" expand="block" tab="Perfil">
+          <ion-icon name="person-Outline"></ion-icon>
+          Perfil
+        </ion-tab-button>
+  
+        
+    
+      </ion-tab-bar>
+    </ion-tabs>
+  </div>
+  <div class="container">
+    <ion-select class="custom-select" [(ngModel)]="especialidadSeleccionada" (ionChange)="buscarDoctores()" placeholder="Selecciona una especialidad">
+      <ion-select-option value="1">Pediatría</ion-select-option>
+      <ion-select-option value="2">Dermatología</ion-select-option>
+      <ion-select-option value="3">Traumatología</ion-select-option>
+      <ion-select-option value="4">Ginecología</ion-select-option>
+    </ion-select>
+    
+
+    
+
+   
+    <div class="list-container" *ngIf="doctores.length > 0">
+      <ion-list [inset]="true">
+        <ion-item *ngFor="let doctor of doctores">
+          <ion-avatar aria-hidden="true" slot="start">
+            <img alt="Avatar de {{ doctor.name }}" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ doctor.name }} {{ doctor.apellido }}</h2>
+            <p> {{ doctor.especialidade?.type }}</p>
+          </ion-label>
+          
+            <ion-item-option  (click)="setOpen(true, doctor)" color="warning">
+              <ion-icon slot="icon-only" name="pin"></ion-icon>
+            </ion-item-option>
+          
+        </ion-item>
+      </ion-list>
+      
+    </div>
+
+
+    <p *ngIf="doctores.length === 0">No hay doctores disponibles para esta especialidad.</p>
+
+
+  </div>
+
+  <ion-modal  [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-title >Disponibilidad </ion-title>
+          <ion-buttons slot="end">
+            <ion-button  (click)="setOpen(false, doctor)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div class="container2">
+          <div class="background-image"></div>
+          <!-- Selección de Fecha -->
+          <ion-card  class="fecha-card1">
+            <ion-card-header>
+              <ion-card-title>Seleccionar Fecha</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-input type="date" [(ngModel)]="fechaSeleccionada" (ionChange)="cargarHorasDisponibles()"></ion-input>
+            </ion-card-content>
+          </ion-card>
+      
+          <!-- Lista de Horas Disponibles -->
+          <ion-card class="horas-card1">
+            <ion-card-header>
+              <ion-card-title>Horas Disponibles</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list *ngIf="horasDisponibles.length > 0; else noHoras">
+                <ion-item *ngFor="let hora of horasDisponibles">
+                  <ion-label>{{ hora }}</ion-label>
+                  <ion-item-option (click)="reservarCita(hora)" color="success">
+                    <ion-icon slot="icon-only" name="pin"></ion-icon>
+                  </ion-item-option>
+                </ion-item>
+                
+              </ion-list>
+              <ng-template #noHoras>
+                <p>No hay horas disponibles para esta fecha.</p>
+              </ng-template>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <ion-button class="botoncito" expand="block" color="success" (click)="enviarCitaReservada()">
+          Confirmar Reserva
+        </ion-button>
+        
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  
+  
+</ion-content>

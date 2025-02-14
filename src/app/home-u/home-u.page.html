@@ -1,0 +1,53 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="secondary" >
+    <ion-title>Princeton-Plainsboro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-tabs>
+    <ion-tab-bar  slot="bottom">
+      <ion-tab-button  routerLink="/agenda" tab="Agenda">
+        <ion-icon name="folder-open-outline"></ion-icon>
+        Agenda
+      </ion-tab-button>
+
+      <ion-tab-button routerLink="/home-u" tab="Home">
+        <ion-icon name="home-Outline"></ion-icon>
+        Home
+      </ion-tab-button>
+      
+      <ion-tab-button id="open-modal" expand="block" tab="Perfil">
+        <ion-icon name="person-Outline"></ion-icon>
+        Perfil
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs>
+  <div class="background-image"></div>
+
+  <ion-card class="cardR">
+    <ion-card-header>
+      <ion-card-title>Mis Citas Reservadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <ion-grid class="tabla-citas">
+        <ion-row class="header-row" >
+          <ion-col><strong>Medico</strong></ion-col>
+          <ion-col><strong>Fecha</strong></ion-col>
+          <ion-col><strong>Hora</strong></ion-col>
+        </ion-row>
+        <ion-row class="data-row" *ngFor="let item of profile">
+          <ion-col>{{ item.medico }}</ion-col>
+          <ion-col>{{ item.fecha }}</ion-col>
+          <ion-col>{{ item.hora }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+
+  
+</ion-content>

@@ -1,0 +1,265 @@
+ion-content {
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../assets/img/fondo.jpg'); /* Usa esta ruta */
+      background-size: cover;
+      background-position: center;
+      z-index: -1; /* Asegura que esté detrás del contenido */
+    }
+  }
+  .welcome-label {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: -110px;
+    margin-bottom: 160px;
+     /* Mover hacia abajo */
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 16px;
+  }
+  
+  .input-item1 {
+    --background: #589dc5; 
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 16px;
+    --border-radius: 8px;
+    
+    
+  }
+  .input-item2 {
+    --background: #589dc5; 
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 100px;
+    --border-radius: 8px;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    
+  }
+  
+  ion-input {
+    background: #e0e0e0;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .ion-button1 {
+    --background: linear-gradient(45deg, #4b0082, #0000ff); /* Degradado azul y morado */
+    --border-radius: 6px;
+    --border-radius: 8px; /* Opcional, puedes ajustar a 0 si quieres bordes cuadrados */
+    --background: rgba(59, 130, 246, 0.9); /* Color con transparencia */
+    --background-hover: rgba(37, 99, 235, 1); /* Color al pasar el mouse */
+    --color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    
+  }
+  
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-link {
+    margin-top: 16px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+  }
+  
+  .register-link a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  ion-label {
+    --color-focused: #000;
+    --color: #000;
+    --placeholder-opacity: 6;
+  }
+  
+  .custom-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transform: translateY(-6px);
+    transition: all 0.3s ease;
+  }
+
+  /* Estilos para la tabla */
+ion-grid {
+  background-color: #ffffff; /* Fondo blanco para resaltar */
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para un efecto elevado */
+  margin-top: 20px; /* Espacio superior */
+  padding: 16px; /* Relleno interno */
+}
+
+/* Filas de la tabla */
+ion-row.header-row {
+  background-color: #f4f4f4; /* Fondo gris claro para el encabezado */
+  font-weight: bold;
+  color: #333; /* Color de texto oscuro para mejor contraste */
+  text-align: center; /* Centrar texto */
+  border-bottom: 2px solid #ddd; /* Borde inferior para separar */
+}
+
+ion-row.doctor-row {
+  background-color: #fafafa; /* Fondo claro para las filas de doctores */
+  border-bottom: 1px solid #ddd; /* Borde para las filas */
+  text-align: center; /* Centrar texto en las filas */
+  transition: background-color 0.3s ease; /* Efecto suave de cambio de color al pasar el mouse */
+}
+
+ion-row.doctor-row:hover {
+  background-color: #e0e0e0; /* Fondo ligeramente gris al pasar el mouse */
+}
+
+/* Estilos para las columnas */
+ion-col {
+  padding: 10px; /* Relleno para las celdas */
+}
+
+/* Estilo para las celdas de "Acciones" */
+ion-col:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Estilo para el contenedor de doctores con bordes redondeados */
+.doctores-container {
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  overflow: hidden;  /* Para asegurar que los bordes redondeados se vean bien */
+  background-color: #ffffff;  /* Fondo blanco para que resalte sobre el fondo */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Estilo para los items de la lista */
+ion-item {
+  --border-radius: 8px;
+  --background: #f9f9f9;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el avatar (imagen circular) */
+ion-avatar img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Estilo para el botón */
+
+
+/* Ajuste de sombra */
+ion-item {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-item-option{
+  border-radius: 10px; /* Ajusta el radio según lo necesites */
+  overflow: hidden;
+ 
+}
+
+.list-container {
+  width: 90%; /* Ajusta el porcentaje según lo necesites */
+  max-width: 600px; /* Establece un ancho máximo para evitar que sea demasiado grande */
+  margin: 0 auto; /* Centrar el contenedor */
+  border-radius: 15px; /* Bordes redondeados */
+  background: #ffffff; /* Fondo blanco o el color que prefieras */
+  padding: 15px; /* Espaciado interno */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.custom-select {
+  width: 90%;
+  max-width: 350px;
+  margin: 15px auto;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  --border-radius: 10px;
+  --padding-start: 12px;
+  --placeholder-color: #666;
+  --color: #333;
+  --background: #f8f9fa;
+  --placeholder-opacity: 0.8;
+}
+
+.custom-select::part(icon) {
+  color: #26083c; /* Ícono de la flecha */
+}
+
+.custom-select::part(text) {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.custom-select ion-select-option {
+  --background: #ffffff;
+  --color: #000;
+}
+
+.custom-select:focus-within {
+  box-shadow: 0px 4px 10px rgba(0, 0, 255, 0.3);
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+.fecha-card1, .horas-card1 {
+
+  border-radius: 15px;
+  width: 90%;
+  max-width: 350px;
+  margin: 15px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 255, 0.3);
+}
+
+ion-item {
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.botoncito {
+  border-radius: 15px;
+  width: 90%;
+  max-width: 350px;
+  margin:  auto;
+}

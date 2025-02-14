@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="background-image"></div>
+
+  <div class="container">
+
+    <ion-label class="welcome-label"> Inicio de Sesion</ion-label>
+    <ion-label style="font-size: 24px;" position="stacked" class="custom-label">Cédula</ion-label>
+    <ion-input #dni   placeholder="Ingresa tu cedula"></ion-input>
+    
+    <ion-label style="font-size: 24px;" position="stacked" class="custom-label">Password</ion-label>
+    <ion-input #password type="password"  placeholder="Ingresa tu contraseña">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+
+      <ion-button color="secondary" (click)="login(dni, password)" expand="block" class="custom-button">
+        Ingresar
+      </ion-button>
+      
+      <ion-button (click)="loginWithGoogle()" expand="block" color="secondary" class="custom-button">
+        Ingresar con Google
+      </ion-button>
+      <ion-button (click)="loginWithFacebook()" expand="block" color="secondary" class="custom-button">
+        Ingresar con Facebook
+      </ion-button>
+
+    <p class="register-text">
+      No estás registrado? <a [routerLink]="['/registro']"  class="register-link">Regístrate</a>
+    </p>
+  </div>
+</ion-content>

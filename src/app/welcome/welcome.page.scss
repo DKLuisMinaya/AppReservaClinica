@@ -1,0 +1,78 @@
+.welcome-content {
+    --background: transparent; /* Fondo transparente para mostrar la imagen */
+  
+    .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/img/doctor1.jpg'); /* Usa esta ruta */
+        background-size: cover;
+        background-position: center;
+        z-index: -1; /* Asegura que esté detrás del contenido */
+      }
+      
+    .overlay-content {
+      position: absolute;
+      top: 20%; /* Ajusta para posicionar el contenido en la parte superior */
+      width: 100%;
+      text-align: center;
+      padding: 0 20px; /* Margen para evitar que los elementos se peguen a los bordes */
+    }
+  
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      color:#DDD369; /* Contraste con la imagen */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
+      margin-bottom: 20px; /* Espaciado debajo del título */
+    }
+    .button {
+      width: 200px;  /* Menos ancho */
+      height: 50px;
+   
+      color: white;
+
+      font-size: 18px;
+      border-radius: 8px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .ion-button1 {
+      margin-top: 10px; /* Espaciado entre botones */
+      --border-radius: 8px;
+   
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      position: absolute;
+        bottom: -230px;  /* Mover hacia abajo */
+        right: 20px; 
+        background-color: #0056b3;
+    }
+    .ion-button2 {
+        margin-top: 10px; /* Espaciado entre botones */
+        --border-radius: 8px; /* Opcional, puedes ajustar a 0 si quieres bordes cuadrados */
+       
+       
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        bottom: -300px;  /* Mover hacia abajo */
+        right: 20px; 
+      }
+    .welcome-label {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: -50px;
+         /* Mover hacia abajo */
+        color: rgb(0, 0, 0);
+        text-align: center;
+      }
+  }
